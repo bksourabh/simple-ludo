@@ -67,6 +67,14 @@
         a:hover {
             text-decoration: underline;
         }
+        ul, ol {
+            color: #424245;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
         .faq-item {
             background: #f5f5f7;
             padding: 20px 25px;
@@ -77,9 +85,60 @@
             margin-top: 0;
             color: #1d1d1f;
         }
-        .faq-item p {
+        .faq-item p, .faq-item ul, .faq-item ol {
             margin-bottom: 0;
         }
+        .faq-item li:last-child {
+            margin-bottom: 0;
+        }
+        .guide-section {
+            background: #f5f5f7;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .guide-section h3 {
+            margin-top: 0;
+            font-size: 1.15em;
+            color: #1d1d1f;
+        }
+        .guide-section p:last-child,
+        .guide-section ul:last-child,
+        .guide-section ol:last-child {
+            margin-bottom: 0;
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #2ECC7115, #27AE6015);
+            border-left: 4px solid #2ECC71;
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+        }
+        .tip-box p {
+            margin-bottom: 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #E74C3C10, #C0392B10);
+            border-left: 4px solid #E74C3C;
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+        }
+        .rule-box p {
+            margin-bottom: 0;
+        }
+        .color-dot {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+        .color-dot.red { background: #E74C3C; }
+        .color-dot.green { background: #2ECC71; }
+        .color-dot.yellow { background: #F1C40F; }
+        .color-dot.blue { background: #3498DB; }
         .contact-section {
             background: linear-gradient(135deg, #E74C3C10, #3498DB10);
             padding: 30px;
@@ -125,36 +184,166 @@
         <p class="subtitle">Support Center</p>
     </div>
 
+    <!-- HOW TO PLAY -->
+    <h2>How to Play Ludo</h2>
+
+    <p>Ludo is a classic board game for 2 to 4 players. Each player has four tokens that start in their coloured yard. The goal is to race all four tokens around the board and into your home triangle before your opponents.</p>
+
+    <div class="guide-section">
+        <h3>The Board</h3>
+        <p>The board has four coloured yards in each corner, one for each player:</p>
+        <ul>
+            <li><span class="color-dot red"></span> <strong>Red</strong> &mdash; bottom-left</li>
+            <li><span class="color-dot green"></span> <strong>Green</strong> &mdash; top-left</li>
+            <li><span class="color-dot yellow"></span> <strong>Yellow</strong> &mdash; top-right</li>
+            <li><span class="color-dot blue"></span> <strong>Blue</strong> &mdash; bottom-right</li>
+        </ul>
+        <p>A shared track of 52 squares runs around the outside of the board. Each player also has a private coloured home path of 6 squares leading to the home triangle in the centre.</p>
+    </div>
+
+    <div class="guide-section">
+        <h3>Getting Started</h3>
+        <ol>
+            <li><strong>Tap the dice</strong> to roll. Players take turns in order: Red, Green, Yellow, Blue.</li>
+            <li>You must <strong>roll a 6</strong> to move a token out of your yard and onto the starting square.</li>
+            <li>If you have no tokens on the board and don't roll a 6, your turn is skipped.</li>
+        </ol>
+        <div class="tip-box">
+            <p><strong>Tip:</strong> When you have only one possible move, the app will move the token automatically to keep the game flowing.</p>
+        </div>
+    </div>
+
+    <div class="guide-section">
+        <h3>Moving Tokens</h3>
+        <ul>
+            <li>After rolling, <strong>tap the token</strong> you want to move. It advances clockwise by the number shown on the dice.</li>
+            <li>If multiple tokens can move, they will glow to indicate they are selectable. Tap the one you want to move.</li>
+            <li>Tokens travel around the shared track and then turn into their coloured home path to reach the centre.</li>
+        </ul>
+    </div>
+
+    <div class="guide-section">
+        <h3>Bonus Rolls</h3>
+        <p>You get an extra roll in these situations:</p>
+        <ul>
+            <li><strong>Roll a 6</strong> &mdash; roll again after moving.</li>
+            <li><strong>Capture an opponent</strong> &mdash; roll again after sending them back.</li>
+            <li><strong>Reach home</strong> &mdash; roll again when a token enters the home triangle.</li>
+        </ul>
+        <div class="rule-box">
+            <p><strong>Three 6s Rule:</strong> If you roll three 6s in a row, your turn is voided and passes to the next player. No token is moved for that sequence.</p>
+        </div>
+    </div>
+
+    <div class="guide-section">
+        <h3>Capturing Opponents</h3>
+        <p>If your token lands on a square occupied by a single opponent token, that token is <strong>captured</strong> and sent back to their yard. They must roll a 6 again to bring it back out.</p>
+        <p>Tokens <strong>cannot be captured</strong> when they are:</p>
+        <ul>
+            <li>On a <strong>safe square</strong> (marked with a star on the board) &mdash; there are 8 safe squares around the track.</li>
+            <li><strong>Stacked</strong> with another token of the same colour &mdash; two or more tokens on the same square are protected.</li>
+            <li>On their <strong>home path</strong> &mdash; the coloured lane leading to the centre is private and safe.</li>
+        </ul>
+    </div>
+
+    <div class="guide-section">
+        <h3>Reaching Home</h3>
+        <ul>
+            <li>After going around the board, your token turns into your coloured home path (6 squares long).</li>
+            <li>You must roll the <strong>exact number</strong> needed to land in the home triangle. If the roll is too high, the token cannot move.</li>
+            <li>Once a token reaches home, it's safe and finished for the rest of the game.</li>
+        </ul>
+    </div>
+
+    <div class="guide-section">
+        <h3>Winning the Game</h3>
+        <p>The <strong>first player to get all four tokens home</strong> wins! The game continues to determine 2nd, 3rd, and 4th place.</p>
+    </div>
+
+    <!-- GAME CONTROLS -->
+    <h2>Game Controls</h2>
+
+    <div class="guide-section">
+        <h3>Playing a Turn</h3>
+        <ol>
+            <li><strong>Tap the dice</strong> &mdash; the dice will roll with an animation.</li>
+            <li><strong>Tap a glowing token</strong> &mdash; if you have multiple options, movable tokens will glow. Tap the one you want.</li>
+            <li>If only one token can move, it moves automatically.</li>
+        </ol>
+        <p>Computer players take their turns automatically with a brief thinking delay.</p>
+    </div>
+
+    <div class="guide-section">
+        <h3>Menu &amp; Saving</h3>
+        <ul>
+            <li>Tap the <strong>menu button</strong> (top-left corner) to return to the main menu.</li>
+            <li>Your offline game is <strong>saved automatically</strong> when you leave.</li>
+            <li>Choose <strong>"Continue Game"</strong> from the main menu to resume.</li>
+            <li>Starting a <strong>"New Offline Game"</strong> will replace your saved game.</li>
+        </ul>
+    </div>
+
+    <!-- GAME SETUP -->
+    <h2>Setting Up a Game</h2>
+
+    <div class="guide-section">
+        <h3>Offline Game</h3>
+        <ol>
+            <li>From the main menu, tap <strong>"New Offline Game"</strong>.</li>
+            <li>For each colour (Red, Green, Yellow, Blue), tap to toggle between <strong>Human</strong> and <strong>Computer</strong>.</li>
+            <li>You must have at least one Human player.</li>
+            <li>Tap <strong>"Start Game"</strong> to begin.</li>
+        </ol>
+        <div class="tip-box">
+            <p><strong>Tip:</strong> For a solo game, set Red to Human and the rest to Computer. For a game night with friends, set multiple players to Human and pass the device between turns.</p>
+        </div>
+    </div>
+
+    <div class="guide-section">
+        <h3>Online Multiplayer</h3>
+        <ol>
+            <li>Make sure <strong>Game Center</strong> is signed in on your device (Settings &gt; Game Center).</li>
+            <li>From the main menu, tap <strong>"Create Online Game"</strong> to host or <strong>"Join Online Game"</strong> to find a match.</li>
+            <li>Game Center handles matchmaking. Once players connect, you'll enter the <strong>lobby</strong>.</li>
+            <li>The host can start the game when all players are ready.</li>
+        </ol>
+    </div>
+
+    <!-- FAQ -->
     <h2>Frequently Asked Questions</h2>
 
     <div class="faq-item">
-        <h3>How do I play Simple Ludo?</h3>
-        <p>Simple Ludo follows the classic Ludo board game rules. Tap the dice to roll, then tap a token to move it. Roll a 6 to bring a token out of the yard. The first player to get all four tokens to the home triangle wins!</p>
-    </div>
-
-    <div class="faq-item">
-        <h3>Can I play against the computer?</h3>
-        <p>Yes! In offline mode, you can configure each of the four players (Red, Green, Yellow, Blue) as either Human or Computer. Play solo against up to three AI opponents, or set up a local multiplayer game with friends on the same device.</p>
-    </div>
-
-    <div class="faq-item">
-        <h3>How does online multiplayer work?</h3>
-        <p>Online multiplayer uses Apple Game Center. Make sure you're signed in to Game Center in your device Settings. From the main menu, choose "Create Online Game" to host a match or "Join Online Game" to find one. Game Center handles matchmaking automatically.</p>
-    </div>
-
-    <div class="faq-item">
         <h3>Why are the online game buttons greyed out?</h3>
-        <p>Online features require Game Center authentication. If the buttons appear dimmed, check that Game Center is enabled and signed in under Settings > Game Center on your device. The app will automatically detect when Game Center becomes available.</p>
-    </div>
-
-    <div class="faq-item">
-        <h3>Can I save my game and continue later?</h3>
-        <p>Yes! Offline games are automatically saved when you leave. When you return, tap "Continue Game" on the main menu to resume exactly where you left off.</p>
+        <p>Online features require Game Center authentication. If the buttons appear dimmed, check that Game Center is enabled and signed in under Settings &gt; Game Center on your device. The app will automatically detect when Game Center becomes available.</p>
     </div>
 
     <div class="faq-item">
         <h3>What's the difference between Guest and Sign in with Apple?</h3>
         <p>Guest mode lets you play offline games immediately without an account. Sign in with Apple provides a personalised experience with your name displayed in-game. Both support full offline gameplay. Online multiplayer requires Game Center regardless of sign-in method.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Why was my turn skipped?</h3>
+        <p>Your turn can be skipped for two reasons:</p>
+        <ul>
+            <li><strong>No valid moves</strong> &mdash; none of your tokens can legally move with the number rolled (e.g., all tokens are in the yard and you didn't roll a 6, or your tokens on the home path need a lower number).</li>
+            <li><strong>Three consecutive 6s</strong> &mdash; rolling three 6s in a row voids the entire turn as a penalty.</li>
+        </ul>
+    </div>
+
+    <div class="faq-item">
+        <h3>Why can't I capture a token on a star square?</h3>
+        <p>Star squares are safe zones. Any token resting on a star square is protected from capture. There are 8 safe squares evenly spaced around the track. Use them strategically to protect your tokens.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Why can't I capture two tokens stacked together?</h3>
+        <p>When two or more tokens of the same colour are on the same square, they form a stack and are protected from capture. You'll need to wait until they split up.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>My token can't enter home. Why?</h3>
+        <p>To enter the home triangle, you need to roll the exact number of remaining squares on your home path. If the dice roll is too high, the token stays where it is and you must try again on your next turn.</p>
     </div>
 
     <div class="faq-item">
@@ -173,7 +362,7 @@
         <p>Send us an email and we'll get back to you as soon as possible.</p>
         <a href="mailto:bksourabh@gmail.com?subject=Simple%20Ludo%20Support" class="btn">Email Support</a>
         <br><br>
-        <p style="font-size: 0.9em; color: #86868b;">You can also report bugs or request features on our <a href="https://github.com/bksourabh/smart_teacher/issues">GitHub page</a>.</p>
+        <p style="font-size: 0.9em; color: #86868b;">You can also report bugs or request features on our <a href="https://github.com/bksourabh/simple-ludo/issues">GitHub page</a>.</p>
     </div>
 
     <div class="footer">
