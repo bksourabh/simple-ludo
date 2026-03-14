@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Ludo - Classic Board Game for iPhone & iPad</title>
+    <title>Simple Ludo - Classic Board Game Fun</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,39 +13,13 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: #1d1d1f;
-            background: #000;
-            overflow-x: hidden;
+            background: #fff;
+            line-height: 1.7;
         }
-
-        /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(180deg, #1a0a2e 0%, #0d1b2a 50%, #0a0a16 100%);
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 30%, rgba(231, 76, 60, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(52, 152, 219, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(46, 204, 113, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, #E74C3C15, #F39C1215, #2ECC7115, #3498DB15);
         }
         .app-icon {
             width: 120px;
@@ -55,367 +29,168 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 30px;
+            margin: 0 auto 24px;
             font-size: 60px;
-            box-shadow: 0 20px 60px rgba(231, 76, 60, 0.3), 0 10px 30px rgba(52, 152, 219, 0.2);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
-        .hero h1 {
-            font-size: 3.5em;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 15px;
-            letter-spacing: -0.02em;
-        }
-        .hero .tagline {
-            font-size: 1.4em;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-        .app-store-badge {
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-        .app-store-badge img {
-            height: 54px;
-        }
-        .app-store-btn {
-            display: inline-block;
-            background: #fff;
-            color: #000;
-            padding: 16px 40px;
-            border-radius: 12px;
-            font-size: 1.1em;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-bottom: 30px;
-        }
-        .app-store-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.15);
-        }
-        .hero-subtitle {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.95em;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 100px 20px;
-            background: #fff;
-        }
-        .features-inner {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
+        h1 {
+            font-size: 3em;
             font-weight: 700;
-            margin-bottom: 15px;
-            color: #1d1d1f;
+            margin-bottom: 8px;
         }
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.15em;
+        .tagline {
+            font-size: 1.3em;
             color: #86868b;
+            margin-bottom: 24px;
+        }
+        .version-badge {
+            display: inline-block;
+            background: #E74C3C;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
             margin-bottom: 60px;
         }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
         .feature-card {
-            text-align: center;
-            padding: 30px 20px;
-        }
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: block;
+            background: #f5f5f7;
+            padding: 28px;
+            border-radius: 16px;
         }
         .feature-card h3 {
-            font-size: 1.2em;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #1d1d1f;
+            font-size: 1.15em;
+            margin-bottom: 8px;
         }
         .feature-card p {
-            color: #6e6e73;
-            line-height: 1.6;
+            color: #424245;
             font-size: 0.95em;
         }
-
-        /* Highlights Section */
-        .highlights {
-            padding: 100px 20px;
-            background: #f5f5f7;
+        .new-tag {
+            display: inline-block;
+            background: #2ECC71;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7em;
+            font-weight: 600;
+            vertical-align: middle;
+            margin-left: 6px;
         }
-        .highlights-inner {
-            max-width: 900px;
-            margin: 0 auto;
+        .whats-new {
+            background: linear-gradient(135deg, #3498DB10, #2ECC7110);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 60px;
         }
-        .highlight-row {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-        .highlight-row:last-child {
-            margin-bottom: 0;
-        }
-        .highlight-row.reverse {
-            flex-direction: row-reverse;
-        }
-        .highlight-text {
-            flex: 1;
-        }
-        .highlight-text h3 {
-            font-size: 1.8em;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #1d1d1f;
-        }
-        .highlight-text p {
-            color: #6e6e73;
-            line-height: 1.7;
-            font-size: 1.05em;
-        }
-        .highlight-visual {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .color-board {
-            width: 200px;
-            height: 200px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 8px;
-            transform: rotate(45deg);
-        }
-        .color-board div {
-            border-radius: 12px;
-        }
-        .color-board .c-red { background: linear-gradient(135deg, #E74C3C, #C0392B); }
-        .color-board .c-green { background: linear-gradient(135deg, #2ECC71, #27AE60); }
-        .color-board .c-yellow { background: linear-gradient(135deg, #F1C40F, #F39C12); }
-        .color-board .c-blue { background: linear-gradient(135deg, #3498DB, #2980B9); }
-        .players-visual {
-            display: flex;
-            gap: 12px;
-        }
-        .player-dot {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: #fff;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Privacy Section */
-        .privacy-section {
-            padding: 80px 20px;
-            background: #fff;
-            text-align: center;
-        }
-        .privacy-inner {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .privacy-badges {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        .privacy-badge {
-            text-align: center;
-        }
-        .privacy-badge .badge-icon {
-            font-size: 36px;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .privacy-badge span {
-            color: #6e6e73;
-            font-size: 0.9em;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 20px;
-            background: #1d1d1f;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-        }
-        footer a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        footer a:hover {
-            color: #fff;
-        }
-        .footer-links {
+        .whats-new h2 {
+            text-align: left;
             margin-bottom: 20px;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            .hero .tagline {
-                font-size: 1.1em;
-            }
-            .section-title {
-                font-size: 2em;
-            }
-            .highlight-row, .highlight-row.reverse {
-                flex-direction: column;
-                gap: 30px;
-            }
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
+        .whats-new ul {
+            padding-left: 20px;
+            color: #424245;
+        }
+        .whats-new li {
+            margin-bottom: 8px;
+        }
+        .links {
+            text-align: center;
+            padding: 40px 20px 60px;
+            border-top: 1px solid #e5e5e5;
+        }
+        .links a {
+            color: #007AFF;
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 1em;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #86868b;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
+    <div class="hero">
+        <div class="app-icon">&#127922;</div>
+        <h1>Simple Ludo</h1>
+        <p class="tagline">Classic Board Game Fun</p>
+        <span class="version-badge">Version 1.1</span>
+    </div>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="app-icon">&#127922;</div>
-            <h1>Simple Ludo</h1>
-            <p class="tagline">The classic board game, beautifully reimagined for iPhone and iPad.</p>
-            <a href="#" class="app-store-btn">Coming Soon on the App Store</a>
-            <p class="hero-subtitle">Free. No ads. No in-app purchases.</p>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section class="features">
-        <div class="features-inner">
-            <h2 class="section-title">Everything you love about Ludo.</h2>
-            <p class="section-subtitle">All the fun of the classic board game, right in your pocket.</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">&#127922;</span>
-                    <h3>Classic Gameplay</h3>
-                    <p>Faithful to the original rules. Roll the dice, race your tokens, capture opponents, and be the first to bring all four tokens home.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">&#129302;</span>
-                    <h3>Smart AI</h3>
-                    <p>Play solo against up to three computer opponents. Configure any mix of Human and Computer players across all four colours.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">&#127760;</span>
-                    <h3>Online Multiplayer</h3>
-                    <p>Challenge players worldwide with Game Center. Create or join matches with real-time peer-to-peer gameplay.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">&#127912;</span>
-                    <h3>Beautiful Graphics</h3>
-                    <p>Vibrant 2D board with smooth SpriteKit animations. Watch tokens glide, dice roll, and victory celebrations light up the screen.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">&#128190;</span>
-                    <h3>Save & Resume</h3>
-                    <p>Never lose your progress. Offline games are automatically saved so you can pick up right where you left off.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">&#128266;</span>
-                    <h3>Immersive Sound</h3>
-                    <p>Sound effects for every action &mdash; dice rolls, captures, safe landings, and victory applause. Background music sets the mood.</p>
-                </div>
+    <div class="content">
+        <h2>Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Room Code Multiplayer <span class="new-tag">NEW</span></h3>
+                <p>Create a game, get a unique code, and share it with friends. No Game Center friend list needed — just enter the code and play.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Mid-Game Late Join <span class="new-tag">NEW</span></h3>
+                <p>Friends can join even after the game starts. AI players are seamlessly replaced with human players, with host approval.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Classic Ludo Gameplay</h3>
+                <p>Faithful to the original rules with smooth animations. Roll the dice, race your tokens, and be the first to get all four home.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Play Your Way</h3>
+                <p>Any combination of Human and Computer players. Solo against AI, local pass-and-play, or online with friends.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Beautiful Graphics</h3>
+                <p>Vibrant, hand-crafted game board with smooth SpriteKit animations. Tokens glide, dice roll with style, and victories celebrate.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Family Friendly</h3>
+                <p>No ads. No in-app purchases. No data collection. Just pure, classic board game fun for the whole family.</p>
             </div>
         </div>
-    </section>
 
-    <!-- Highlights -->
-    <section class="highlights">
-        <div class="highlights-inner">
-            <div class="highlight-row">
-                <div class="highlight-text">
-                    <h3>Play your way.</h3>
-                    <p>Set up the perfect game with flexible player configuration. Any combination of Human and Computer players across Red, Green, Yellow, and Blue. Solo, local multiplayer, or online &mdash; the choice is yours.</p>
-                </div>
-                <div class="highlight-visual">
-                    <div class="color-board">
-                        <div class="c-red"></div>
-                        <div class="c-green"></div>
-                        <div class="c-blue"></div>
-                        <div class="c-yellow"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="highlight-row reverse">
-                <div class="highlight-text">
-                    <h3>Family game night, anywhere.</h3>
-                    <p>Designed for all ages. No ads, no in-app purchases, no data collection. Just pure, classic board game fun for the whole family &mdash; on iPhone and iPad.</p>
-                </div>
-                <div class="highlight-visual">
-                    <div class="players-visual">
-                        <div class="player-dot" style="background: #E74C3C;">R</div>
-                        <div class="player-dot" style="background: #2ECC71;">G</div>
-                        <div class="player-dot" style="background: #F1C40F; color: #333;">Y</div>
-                        <div class="player-dot" style="background: #3498DB;">B</div>
-                    </div>
-                </div>
-            </div>
+        <div class="whats-new">
+            <h2>What's New in v1.1</h2>
+            <ul>
+                <li><strong>Room Code Multiplayer</strong> — create a game, get a 6-character code, share via Messages or clipboard</li>
+                <li><strong>Host Colour Selection</strong> — choose your colour before the game starts</li>
+                <li><strong>Auto-Start</strong> — game starts automatically when all 4 human players join</li>
+                <li><strong>AI Backfill</strong> — start early with remaining slots filled by AI</li>
+                <li><strong>Mid-Game Late Join</strong> — friends join mid-game, replacing AI players with host approval</li>
+                <li><strong>Guest Online Access</strong> — guest users can now play online (Game Center sign-in prompted on demand)</li>
+                <li><strong>UI Improvements</strong> — improved menu layout, refined colour picker, better button alignment</li>
+            </ul>
         </div>
-    </section>
+    </div>
 
-    <!-- Privacy -->
-    <section class="privacy-section">
-        <div class="privacy-inner">
-            <h2 class="section-title">Your privacy matters.</h2>
-            <p class="section-subtitle">All data stays on your device. No tracking. No analytics. No servers.</p>
-            <div class="privacy-badges">
-                <div class="privacy-badge">
-                    <span class="badge-icon">&#128274;</span>
-                    <span>No Data Collection</span>
-                </div>
-                <div class="privacy-badge">
-                    <span class="badge-icon">&#128683;</span>
-                    <span>No Ads</span>
-                </div>
-                <div class="privacy-badge">
-                    <span class="badge-icon">&#128100;</span>
-                    <span>Sign in with Apple</span>
-                </div>
-                <div class="privacy-badge">
-                    <span class="badge-icon">&#128038;</span>
-                    <span>Family Friendly</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:bksourabh@gmail.com?subject=Simple%20Ludo">Contact</a>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="support.html">Support</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="mailto:bksourabh@gmail.com?subject=Simple%20Ludo">Contact</a>
-        </div>
+    <div class="footer">
         <p>&copy; 2026 Sourabh Mazumder. All rights reserved.</p>
-    </footer>
-
+    </div>
 </body>
 </html>
